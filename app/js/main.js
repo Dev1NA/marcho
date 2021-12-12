@@ -1,6 +1,17 @@
 $(function (){
   
 
+
+  let location = window.location.href;
+  let cur_url = '/' + location.split('/').pop();
+  let link = $(this).find('a').attr('href');
+  $('.menu__list li').each(function () {
+    let link = $(this).find('a').attr('href');
+    if (cur_url == link) {
+        $(this).addClass('menu__list-link--active');
+    }
+});
+
   $('.menu__btn').on('click', function () {
     $(".menu__list").toggleClass('menu__list--active');
   })
